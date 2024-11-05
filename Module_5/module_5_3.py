@@ -1,16 +1,21 @@
 class House:
+
+    houses_history = []
+
+    def __new__(cls, *args, **kwargs):
+
+        if args:
+            cls.houses_history.append(args[0])
+
+        return object.__new__(cls)
+
+
+
     def __init__(self, name, number_of_floors):
 
         self.name = name
         self.number_of_floors = number_of_floors
 
-    def go_to(self, new_floor):
-
-        if 0 < new_floor <= self.number_of_floors:
-            for i in range(1, new_floor + 1):
-                print(i)
-        else:
-            print('Такого этажа не существует')
 
     def __len__(self):
 
@@ -58,6 +63,18 @@ class House:
     def  __ne__(self, other):
         return self.number_of_floors != other.number_of_floors
 
+    def __del__(self):
+
+        print(f" {self.name} снесён, но он останется в истории")
+
+    def go_to(self, new_floor):
+
+        if 0 < new_floor <= self.number_of_floors:
+            for i in range(1, new_floor + 1):
+                print(i)
+        else:
+            print('Такого этажа не существует')
+
 
 
 
@@ -66,7 +83,9 @@ h1 = House('ЖК Эльбрус', 10)
 
 h2 = House('ЖК Акация', 20)
 
+h3 = House('ЖК Матрёшки', 20)
 
+del h3
 
 print(h1)
 print(h2)
