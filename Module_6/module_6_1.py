@@ -10,6 +10,15 @@ class Animal:
 
         self.name = name
 
+    def eat(self, food):
+        if isinstance(food, (Fruit, Flower)):
+            if food.edible:
+                print(f'{self.name} съел {food.name}')
+                self.fed = True
+
+        else:
+             print(f'{self.name} не стал есть {food.name}')
+             self.alive = False
 
 
 class Plant:
@@ -25,7 +34,8 @@ class Plant:
 
 class Mammal(Animal):
 
-    def eat(self, food):
+    pass
+    """def eat(self, food):
 
         if food.edible:
             print(f'{self.name} съел {food.name}')
@@ -33,17 +43,14 @@ class Mammal(Animal):
 
         else:
              print(f'{self.name} не стал есть {food.name}')
-             self.alive = False
-
-
-
-
+             self.alive = False"""
 
 
 
 class Predator(Animal):
 
-    def eat(self, food):
+    pass
+    """def eat(self, food):
 
         if food.edible:
             print(f'{self.name} съел {food.name}')
@@ -52,7 +59,7 @@ class Predator(Animal):
         else:
             print(f'{self.name} не стал есть {food.name}')
             self.alive = False
-
+"""
 
 
 class Flower(Plant):
