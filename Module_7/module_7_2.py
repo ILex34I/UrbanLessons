@@ -2,32 +2,20 @@
 
 def custom_write(file_name, strings):
 
+    strings_positions = {}
 
 
+    name = open(file_name, 'w', encoding='utf-8')
 
+    for j, i in enumerate(strings):
 
+        strings_positions[(j + 1, name.tell())] = i
 
-    
-    file_name = open(name, 'a', encoding='utf-8')
+        name.write(i + '\n')
 
+    name.close()
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    return strings_positions
 
 info = [
 
@@ -40,8 +28,6 @@ info = [
     'Спасибо!'
 
     ]
-
-
 
 result = custom_write('test.txt', info)
 
