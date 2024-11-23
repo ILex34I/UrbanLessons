@@ -18,7 +18,7 @@ class Shop:
 
     def __init__(self):
 
-        self.__file_name = 'products.txt'
+        self.__file_name = 'file2.txt'
 
 
     def get_products(self):
@@ -45,7 +45,6 @@ class Shop:
                 print(f'Продукт {i.name} уже есть в магазине')
 
         file.close()
-
 
 
 
