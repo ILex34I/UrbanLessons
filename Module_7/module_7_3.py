@@ -37,7 +37,7 @@ class WordsFinder:
 
         for key, value in self.get_all_words().items():
             if word.lower() in value:
-                slovar_2[key] = value.count(word.lower()) + 1
+                slovar_2[key] = value.count(word.lower())
 
             return slovar_2
 
