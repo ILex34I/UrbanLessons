@@ -7,12 +7,12 @@ class Car:
 
     def __is_valid_vin(vin_number):
 
-        if isinstance(vin_number, int) and 1000000 <= vin_number <= 9999999:  # Что за параметр vin_number и откуда он передаётся? И как его передать?
+        if isinstance(vin_number, int) and 1000000 <= vin_number <= 9999999:
             return True
         raise IncorrectVinNumber('Некорректный тип vin номер')
 
     def __is_valid_numbers(numbers):
-        if isinstance(numbers, int) and numbers:            #  переданная строка должна состоять ровно из 6 символов.
+        if isinstance(numbers, str) and len(numbers) == 6:
             return True
         raise IncorrectCarNumbers('Некорректный тип данных для номеров')
 
